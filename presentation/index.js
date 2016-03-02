@@ -1,6 +1,6 @@
 // Import React
 import React from "react";
-
+import moment from 'moment'
 // Import Spectacle Core tags
 import {
   Appear,
@@ -46,15 +46,15 @@ const images = {
 preloader(images);
 
 const theme = createTheme(
-  { primary: "#336699" },
-  { primary: "" }
+
 );
 
 export default class Presentation extends React.Component {
   render() {
+    const todaysDate = new moment().format("YYYY.MM.DD")
     return (
       <Spectacle theme={theme}>
-        <Deck transition={["zoom", "slide"]} transitionDuration={500}>
+        <Deck transition={["slide"]} transitionDuration={500}>
           <Slide
             notes="
             <ul>
@@ -63,7 +63,7 @@ export default class Presentation extends React.Component {
               <li>what/how/why</li>
             </ul>
             "
-            transition={["zoom"]} bgColor="primary">
+            transition={["zoom"]}>
             <Heading size={1} caps>
               Excel
             </Heading>
@@ -74,7 +74,7 @@ export default class Presentation extends React.Component {
               practices
             </Heading>
 
-            <Heading size={1} fit caps textColor="black">
+            <Heading size={1} fit caps textColor="secondary">
               The Excel class for everyone
             </Heading>
             <Text lineHeightlineHeight={50.5} margin="70px auto 0px" >
@@ -92,7 +92,8 @@ export default class Presentation extends React.Component {
                 <ul>
                   <li>write down notes, ask your neigbors<li>
                 </ul>
-              </ul>">
+              </ul>"
+            transition={['slide']} >
             <Heading fit margin="-150px auto 150px">
               Learn by doing
             </Heading>
@@ -104,26 +105,25 @@ export default class Presentation extends React.Component {
           <Slide
             id="background">
             <Heading size={2} fit caps>who am i?</Heading>
-            <Appear><Heading size={1}>Excel GOD</Heading></Appear>
+            <Appear><Heading size={1} textFont="secondary">Excel GOD</Heading></Appear>
           </Slide>
 
 
           <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
             <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/>
-            <Heading size={2} caps fit textColor="primary" textFont="primary">
+            <Heading size={2} caps fit textColor="primary" textFont="secondary">
               Wait what?
             </Heading>
           </Slide>
 
 
           <Slide
-            id="backgroundClarification">
+            id="clarification">
             <Heading size={2} fit caps>who am i?</Heading>
-            <Heading size={8}>an</Heading>
+            <Heading size={6} textColor="white">an</Heading>
             <Heading size={1}>Excel GOD</Heading>
             <Appear>
               <BlockQuote>
-                <Quote>Wonderfully formatted quotes</Quote>
                 <Cite>Will Harrison</Cite>
               </BlockQuote>
             </Appear>
@@ -132,7 +132,7 @@ export default class Presentation extends React.Component {
 
           <Slide
             id="example1">
-            show example1 here
+            <Heading textColor="secondary">33</Heading>
           </Slide>
 
 
@@ -148,16 +148,63 @@ export default class Presentation extends React.Component {
             </Heading>
           </Slide>
 
+          <Slide bgColor="secondary"
+            id="step1"
+            transition={["fade"]} >
+            <Heading size={2} textColor="primary">
+              Open Excel
+            </Heading>
+            <Text textColor="tertiary">open new workbook</Text>
+            <Appear>
+              <Text textColor="tertiary">press ctrl-s (cmd-s)</Text>
+            </Appear>
+            <Appear>
+              <BlockQuote textColor="tertiary">save as<Quote textColor="tertiary">{`${todaysDate}.ExcelTraining.xlsx`}</Quote>
+                <Cite>Tip #1</Cite>
+              </BlockQuote>
+            </Appear>
+          </Slide>
+
+
+          <Slide
+            id="data"
+            transition={["fade"]}
+            bgColor="tertiary"
+            notes= "
+              <ul>
+                <li>workbook/worksheet</li>
+                <li>cells</li>
+                <li>rows</li>
+                <li>columns</li>
+              </ul>
+            " >
+            <Heading textColor="primary">
+              DATA
+            </Heading>
+          </Slide>
+
+          <Slide
+            id="rule-1"
+            transition={["fade"]}
+            bgColor="tertiary" >
+            <Heading textColor="primary">DATA</Heading>
+            <Heading textFont="tertiary" textColor="secondary" fill>Rule #1</Heading>
+            <Heading textFont="tertiary" textColor="secondary" caps fit>Excel is a data tool first</Heading>
+            <Heading size={6} textColor="primary">Reporting comes later</Heading>
+          </Slide>
 
 
 
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+
+          <Slide transition={["zoom"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
             <CodePane
               lang="jsx"
               source={require("raw!../assets/deck.example")}
               margin="20px auto"
             />
           </Slide>
+
+
           <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
             <Appear fid="1">
               <Heading size={1} caps fit textColor="primary">
@@ -165,7 +212,7 @@ export default class Presentation extends React.Component {
               </Heading>
             </Appear>
             <Appear fid="2">
-              <Heading size={1} caps fit textColor="tertiary">
+              <Heading size={1} caps fit textColor="secondary">
                 Adjustable Darkness
               </Heading>
             </Appear>
@@ -175,28 +222,39 @@ export default class Presentation extends React.Component {
               </Heading>
             </Appear>
           </Slide>
+
+
           <Slide transition={["zoom", "fade"]} bgColor="primary">
             <Heading caps fit>Flexible Layouts</Heading>
             <Layout>
               <Fill>
                 <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Left
+                  Name
                 </Heading>
               </Fill>
               <Fill>
                 <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Right
+                  Age
+                </Heading>
+              </Fill>
+              <Fill>
+                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                  Years in Sandpoint
                 </Heading>
               </Fill>
             </Layout>
           </Slide>
+
+
           <Slide transition={["slide"]} bgColor="black">
             <BlockQuote>
-              <Quote>Wonderfully formatted quotes</Quote>
-              <Cite>Ken Wheeler</Cite>
+              <Quote textColor="tertiary">Will, this is a message from the future. Run.</Quote>
+              <Cite textColor="tertiary">Will Harrison</Cite>
             </BlockQuote>
           </Slide>
-          <Slide transition={["spin", "zoom"]} bgColor="tertiary">
+
+
+          <Slide transition={["zoom"]} bgColor="tertiary">
             <Heading caps fit size={1} textColor="primary">
               Inline Markdown
             </Heading>
@@ -211,7 +269,9 @@ You can write inline images, [Markdown Links](http://commonmark.org), paragraph 
               `}
             </Markdown>
           </Slide>
-          <Slide transition={["slide", "spin"]} bgColor="primary">
+
+
+          <Slide transition={["slide"]} bgColor="primary">
             <Heading caps fit size={1} textColor="tertiary">
               Smooth
             </Heading>
@@ -219,6 +279,8 @@ You can write inline images, [Markdown Links](http://commonmark.org), paragraph 
               Combinable Transitions
             </Heading>
           </Slide>
+
+
           <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
             <List>
               <Appear><ListItem>Inline style based theme system</ListItem></Appear>
@@ -229,18 +291,24 @@ You can write inline images, [Markdown Links](http://commonmark.org), paragraph 
               <Appear><ListItem>And...</ListItem></Appear>
             </List>
           </Slide>
+
+
           <Slide transition={["slide"]} bgColor="primary">
             <Heading size={1} caps fit textColor="tertiary">
               Your presentations are interactive
             </Heading>
             <Interactive/>
           </Slide>
-          <Slide transition={["spin", "slide"]} bgColor="tertiary">
-            <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
+
+
+          <Slide transition={["slide"]} bgColor="primary">
+            <Heading size={1} fit lineHeight={1.5} textFont="tertiary" textColor="secondary">
               Made with love in Sandpoint by
             </Heading>
             <Image width="100%" src={images.logo}/>
           </Slide>
+
+
         </Deck>
       </Spectacle>
     );
