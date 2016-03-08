@@ -55,6 +55,7 @@ export default class Presentation extends React.Component {
     return (
       <Spectacle theme={theme}>
         <Deck transition={["slide"]} transitionDuration={500}>
+
           <Slide
             notes="
             <ul>
@@ -77,6 +78,9 @@ export default class Presentation extends React.Component {
             <Heading size={1} fit caps textColor="secondary">
               The Excel class for everyone
             </Heading>
+            <Appear>
+              <Text>how to build a headache-free spreadsheet</Text>
+            </Appear>
             <Text lineHeightlineHeight={50.5} margin="70px auto 0px" >
               Another evil experiment <span id="heart">♥</span> by Raygun Labs.
             </Text>
@@ -192,6 +196,15 @@ export default class Presentation extends React.Component {
             <Heading textFont="tertiary" textColor="secondary" caps fit>Excel is a data tool first</Heading>
             <Heading size={6} textColor="primary">Reporting comes later</Heading>
           </Slide>
+
+          <Slide
+            id="navigation"
+            transition={["zoom", "fade"]}
+            bgColor="secondary">
+            <Heading caps fit>Navigation</Heading>
+
+          </Slide>
+
 
 
 
