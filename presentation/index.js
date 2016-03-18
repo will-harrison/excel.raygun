@@ -7,6 +7,7 @@ import {
   BlockQuote,
   Cite,
   CodePane,
+  Code,
   Deck,
   Fill,
   Heading,
@@ -81,7 +82,7 @@ export default class Presentation extends React.Component {
             <Appear>
               <Text>how to build a headache-free spreadsheet</Text>
             </Appear>
-            <Text lineHeightlineHeight={50.5} margin="70px auto 0px" >
+            <Text lineHeightlineHeight={50.5} fit textColor="#306390" margin="170px auto 0px" >
               Another evil experiment <span id="heart">♥</span> by Raygun Labs.
             </Text>
           </Slide>
@@ -181,16 +182,21 @@ export default class Presentation extends React.Component {
                 <li>rows</li>
                 <li>columns</li>
               </ul>
+              sort, filter, no reporting
             " >
             <Heading textColor="primary">
-              DATA
+              Excel
             </Heading>
+              <BlockQuote>double click tab<Quote>rename 'Sheet1' to 'data'</Quote>
+                <Cite>Tip #2</Cite>
+              </BlockQuote>
           </Slide>
 
           <Slide
             id="rule-1"
             transition={["fade"]}
-            bgColor="tertiary" >
+            bgColor="tertiary"
+            notes="" >
             <Heading textColor="primary">DATA</Heading>
             <Heading textFont="tertiary" textColor="secondary" fill>Rule #1</Heading>
             <Heading textFont="tertiary" textColor="secondary" caps fit>Excel is a data tool first</Heading>
@@ -202,116 +208,59 @@ export default class Presentation extends React.Component {
             transition={["zoom", "fade"]}
             bgColor="secondary">
             <Heading caps fit>Navigation</Heading>
-
+              <Heading textFont="tertiary" textColor="primary" fill>Rule #2</Heading>
+              <Heading textFont="tertiary" textColor="primary" caps fill fit>Your mouse is LAVA, don't touch it</Heading>
+              <Appear>
+                <Heading size={9} textColor="tertiary">sometimes it's ok, but not very often</Heading>
+              </Appear>
           </Slide>
 
-
+          <Slide
+            id="shortcuts" >
+            <Heading size={3}>Shortcuts</Heading>
+            <Appear>
+              <Heading textColor="secondary" size={1}>♥</Heading>
+            </Appear>
+          </Slide>
 
 
 
           <Slide transition={["zoom"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
             <CodePane
-              lang="jsx"
+              lang="sql"
               source={require("raw!../assets/deck.example")}
-              margin="20px auto"
+              margin="-200px auto"
             />
           </Slide>
 
 
+
+
           <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
-            <Appear fid="1">
-              <Heading size={1} caps fit textColor="primary">
-                Full Width
-              </Heading>
-            </Appear>
-            <Appear fid="2">
-              <Heading size={1} caps fit textColor="secondary">
-                Adjustable Darkness
+            <Heading size={1} caps fit textColor="primary">
+              Reporting
+            </Heading>
+            <Appear fid="4">
+              <Heading size={2} caps fit textColor="secondary">
+                Formatting
               </Heading>
             </Appear>
             <Appear fid="3">
               <Heading size={1} caps fit textColor="primary">
-                Background Imagery
+                Aggregation
+              </Heading>
+            </Appear>
+            <Appear fid="2">
+              <Heading size={6} textColor="tertiary">
+                Sexy
               </Heading>
             </Appear>
           </Slide>
 
 
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading caps fit>Flexible Layouts</Heading>
-            <Layout>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Name
-                </Heading>
-              </Fill>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Age
-                </Heading>
-              </Fill>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Years in Sandpoint
-                </Heading>
-              </Fill>
-            </Layout>
-          </Slide>
 
 
-          <Slide transition={["slide"]} bgColor="black">
-            <BlockQuote>
-              <Quote textColor="tertiary">Will, this is a message from the future. Run.</Quote>
-              <Cite textColor="tertiary">Will Harrison</Cite>
-            </BlockQuote>
-          </Slide>
 
-
-          <Slide transition={["zoom"]} bgColor="tertiary">
-            <Heading caps fit size={1} textColor="primary">
-              Inline Markdown
-            </Heading>
-            <Markdown>
-              {`
-![Markdown Logo](${images.markdown.replace("/", "")})
-
-You can write inline images, [Markdown Links](http://commonmark.org), paragraph text and most other markdown syntax
-* Lists too!
-* With ~~strikethrough~~ and _italic_
-* And lets not forget **bold**
-              `}
-            </Markdown>
-          </Slide>
-
-
-          <Slide transition={["slide"]} bgColor="primary">
-            <Heading caps fit size={1} textColor="tertiary">
-              Smooth
-            </Heading>
-            <Heading caps fit size={1} textColor="secondary">
-              Combinable Transitions
-            </Heading>
-          </Slide>
-
-
-          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-            <List>
-              <Appear><ListItem>Inline style based theme system</ListItem></Appear>
-              <Appear><ListItem>Autofit text</ListItem></Appear>
-              <Appear><ListItem>Flexbox layout system</ListItem></Appear>
-              <Appear><ListItem>React-Router navigation</ListItem></Appear>
-              <Appear><ListItem>PDF export</ListItem></Appear>
-              <Appear><ListItem>And...</ListItem></Appear>
-            </List>
-          </Slide>
-
-
-          <Slide transition={["slide"]} bgColor="primary">
-            <Heading size={1} caps fit textColor="tertiary">
-              Your presentations are interactive
-            </Heading>
-            <Interactive/>
-          </Slide>
 
 
           <Slide transition={["slide"]} bgColor="primary">
