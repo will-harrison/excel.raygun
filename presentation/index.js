@@ -39,9 +39,13 @@ require("spectacle/lib/themes/default/index.css");
 
 const images = {
   city: require("../assets/city.jpg"),
-  kat: require("../assets/kat.png"),
+  waitWhat: require("../assets/waitWhat.jpg"),
   logo: require("../assets/formidable-logo.svg"),
-  markdown: require("../assets/markdown.png")
+  example1: require("../assets/std.png"),
+  exampleMd1: require("../assets/md1.png"),
+  exampleMd2: require("../assets/md2.png"),
+  exampleMd3: require("../assets/md3wha.png"),
+  exampleMdfinal: require("../assets/mdFinal.png")
 };
 
 preloader(images);
@@ -115,7 +119,7 @@ export default class Presentation extends React.Component {
 
 
           <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
-            <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/>
+            <Image src={images.waitWhat.replace("/", "")} margin="0px auto 40px" height="293px"/>
             <Heading size={2} caps fit textColor="primary" textFont="secondary">
               Wait what?
             </Heading>
@@ -136,14 +140,29 @@ export default class Presentation extends React.Component {
 
 
           <Slide
-            id="example1">
-            <Heading textColor="secondary">33</Heading>
+            id="example1"
+            bgImage={images.example1.replace("/", "")} >
           </Slide>
 
 
           <Slide
-            id="example2">
-            show example2 here
+            id="example2"
+            bgImage={images.exampleMd1.replace("/", "")} >
+          </Slide>
+
+          <Slide
+            id="example3"
+            bgImage={images.exampleMd2.replace("/", "")} >
+          </Slide>
+
+          <Slide
+            id="example4"
+            bgImage={images.exampleMd3.replace("/", "")} >
+          </Slide>
+
+          <Slide
+            id="example5"
+            bgImage={images.exampleMdfinal.replace("/", "")} >
           </Slide>
 
           <Slide
@@ -164,7 +183,7 @@ export default class Presentation extends React.Component {
               <Text textColor="tertiary">press ctrl-s (cmd-s)</Text>
             </Appear>
             <Appear>
-              <BlockQuote textColor="tertiary">save as<Quote textColor="tertiary">{`${todaysDate}.ExcelTraining.xlsx`}</Quote>
+              <BlockQuote textColor="tertiary">save as<Quote textColor="tertiary">{`${todaysDate}.ExcelTraining`}</Quote>
                 <Cite>Tip #1</Cite>
               </BlockQuote>
             </Appear>
@@ -182,14 +201,21 @@ export default class Presentation extends React.Component {
                 <li>rows</li>
                 <li>columns</li>
               </ul>
-              sort, filter, no reporting
+            !!!start building data here!!!
             " >
             <Heading textColor="primary">
               Excel
             </Heading>
-              <BlockQuote>double click tab<Quote>rename 'Sheet1' to 'data'</Quote>
+            <Appear>
+              <BlockQuote><Quote>name headers to represent data</Quote>
                 <Cite>Tip #2</Cite>
               </BlockQuote>
+            </Appear>
+            <Appear>
+              <BlockQuote>double click tab<Quote>rename 'Sheet1' to 'data'</Quote>
+                <Cite>Tip #3</Cite>
+              </BlockQuote>
+            </Appear>
           </Slide>
 
           <Slide
@@ -225,10 +251,10 @@ export default class Presentation extends React.Component {
 
 
 
-          <Slide transition={["zoom"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+          <Slide id="shortcuts-detail" transition={["zoom"]} bgColor="primary" >
             <CodePane
-              lang="sql"
-              source={require("raw!../assets/deck.example")}
+              lang="txt"
+              source={require("raw!../assets/shortcuts")}
               margin="-200px auto"
             />
           </Slide>
@@ -236,7 +262,7 @@ export default class Presentation extends React.Component {
 
 
 
-          <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
+          <Slide id="reporting-intro" transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
             <Heading size={1} caps fit textColor="primary">
               Reporting
             </Heading>
@@ -250,16 +276,96 @@ export default class Presentation extends React.Component {
                 Aggregation
               </Heading>
             </Appear>
-            <Appear fid="2">
-              <Heading size={6} textColor="tertiary">
-                Sexy
-              </Heading>
+          </Slide>
+
+          <Slide id="basic-functions" transition={["slide"]} bgColor="primary">
+            <Heading size={1} fit lineHeight={1.5} textFont="tertiary" textColor="secondary">
+              Basic functions
+            </Heading>
+            <Appear>
+            <Heading size={6}>
+              =42
+              <Text>( or just 42 )</Text>
+            </Heading>
             </Appear>
+            <Appear>
+            <Heading size={6}>
+              =A1
+            </Heading>
+            </Appear>
+            <Appear>
+            <Heading size={6}>
+              =sum(A:A)
+            </Heading>
+            </Appear>
+            <Appear>
+            <Heading size={6}>
+              =min(A:A)
+            </Heading>
+            </Appear>
+            <Appear>
+            <Heading size={6}>
+              =average(A:A)
+            </Heading>
+            </Appear>
+            <Appear>
+            <Heading size={6}>
+              =max(A:A)
+            </Heading>
+            </Appear>
+            <Appear>
+            <Heading size={6}>
+              =A1/sum(A:A)
+            </Heading>
+            </Appear>
+          </Slide>
+
+          <Slide
+            id="rule-3"
+            transition={["zoom", "fade"]}
+            bgColor="secondary">
+            <Heading caps fit>Basic formatting</Heading>
+            <Heading textFont="tertiary" textColor="primary" fill>Rule #3</Heading>
+            <Heading textFont="tertiary" textColor="primary" caps fill fit>Merged cells are the devil</Heading>
           </Slide>
 
 
 
+          <Slide
+           bgColor="tertiary"
+            id="basic-formatting"
+            transition={["fade"]} >
+              <Heading size={4} textColor="primary">
+                expand columns
+              </Heading>
+            <Appear>
+              <Heading size={4} textColor="primary">
+                format headers
+              </Heading>
+            </Appear>
+            <Appear>
+              <Heading size={4} textColor="primary">
+                format numbers
+              </Heading>
+            </Appear>
+            <Appear>
+              <Heading size={4} textColor="primary">
+                copy/paste formats
+              </Heading>
+            </Appear>
+            <Appear>
+              <Heading size={4} textColor="primary">
+                freeze panes
+              </Heading>
+            </Appear>
+            <Appear>
+              <BlockQuote>
+                <Quote>use restraint when formatting, save it for the end</Quote>
+                <Cite>Tip #4</Cite>
+              </BlockQuote>
+            </Appear>
 
+          </Slide>
 
 
 

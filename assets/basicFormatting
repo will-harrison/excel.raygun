@@ -1,0 +1,16 @@
+//************************
+// Basic formatting
+//************************
+  =42             //or just type 42, hand key value
+  =(A1)           //reference value from another cell - parens not necessary
+  =count(B:B)     //counts all values in column B
+  =sum(A:A)       //sum of all values in column A
+  =average(A:A)   //average of all values in column A
+  =A1/sum(A:A)    //% of A1 value to total sum of column A
+
+
+
+git clone git@github.com:nkbt/esnext-quickstart.git
+cd esnext-quickstart
+npm install
+npm start
