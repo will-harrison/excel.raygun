@@ -235,6 +235,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "presentation/index.js",
+			"settings":
+			{
+				"buffer_size": 11120,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/shortcuts",
+			"settings":
+			{
+				"buffer_size": 1701,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -346,11 +362,6 @@
 	"expanded_folders":
 	[
 		"/raygun/projects/excelBestPracticePresentation",
-		"/raygun/projects/excelBestPracticePresentation/node_modules/spectacle",
-		"/raygun/projects/excelBestPracticePresentation/node_modules/spectacle/lib",
-		"/raygun/projects/excelBestPracticePresentation/node_modules/spectacle/lib/themes",
-		"/raygun/projects/excelBestPracticePresentation/node_modules/spectacle/lib/themes/default",
-		"/raygun/projects/excelBestPracticePresentation/node_modules/spectacle/presentation",
 		"/raygun/projects/excelBestPracticePresentation/presentation"
 	],
 	"file_history":
@@ -477,7 +488,7 @@
 	],
 	"find":
 	{
-		"height": 49.0
+		"height": 48.0
 	},
 	"find_in_files":
 	{
@@ -491,6 +502,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"<Cite",
+			"<Cite>Tip",
+			"xl",
+			"formulas",
+			"reporting",
 			"theme",
 			"exampleMdfinal",
 			"flex",
@@ -613,12 +629,7 @@
 			"appliances",
 			"appliance",
 			"Appliance",
-			"appliances",
-			"appliance",
-			"Appliance",
-			"appliance",
-			"Appliance",
-			"appliance"
+			"appliances"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -636,8 +647,69 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "presentation/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11120,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10058,
+								10058
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 10213.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "assets/shortcuts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1701,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1278,
+								1278
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 480.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
