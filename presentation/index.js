@@ -51,7 +51,15 @@ const images = {
 preloader(images);
 
 const theme = createTheme(
-
+  { primary: "#336699",
+    secondary: "#C2FCF7",
+    tertiary: "#172A3A",
+    quartenary: "white"
+  },
+  { primary: "Montserrat",
+    secondary: "Oswald",
+    tertiary: "Inconsolata"
+  }
 );
 
 export default class Presentation extends React.Component {
