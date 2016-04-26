@@ -1,0 +1,48 @@
+//************************
+// META KEYS
+//************************
+  enter             //commits and moves to next cell below
+    shift+enter     //commits and moves to next cell above
+  tab               //commits and moves to next cell to right
+   shift+tab        //commits and moves to next cell to left
+  esc               //does NOT commit and does not move - get out of jail
+
+//************************
+// SUPER KEYS
+//************************
+  F2                //let's you inspect a cell, dig around a little
+  F4                //locks cell reference
+  ctrl+home         //takes you to A1
+  ctrl+end          //takes you to the last cell ever used
+
+//************************
+// ARROWS
+//************************
+  left
+  right
+  up
+  down
+
+  *right arrow as an example
+  ctrl+right        //takes you to the rightmost cell in the range
+  shift+right       //selects the next cell to the right
+  ctrl+shift+right  //selects through the rightmost cell in the range
+
+//************************
+// HACKS
+//************************
+  ctrl+a            //select all cells in the current range
+    ctrl+a+a        //select all cells in worksheet
+  ctrl+space        //select entire column
+  shift+space       //select entire row
+  ctrl+1            //open cell formatting window
+  ctrl+pageup       //go to worksheet to left
+  ctrl+pagedown     //go to worksheet to right
+
+//************************
+// SUPER HACKS
+//************************
+  alt+o+c+a         //expand column(s)
+  alt+a+s+a         //sort ascending (new versions of Excel only)
+  alt+a+s+d         //sort descending (new versions of Excel only)
+  alt+d+e           //text to columns
